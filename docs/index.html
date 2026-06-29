@@ -1151,7 +1151,7 @@
         </div>
         <div class="col-lg-7">
           <div class="contact-form-box">
-            <form id="contactForm">
+            <form id="contactForm" action="https://formspree.io/f/mrevgppz" method="POST">
               <div class="row g-3">
                 <div class="col-sm-6">
                   <label class="form-label" for="contactName">Your Name</label>
@@ -1193,7 +1193,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-    const FORMSPREE_ID = 'Yhttps://formspree.io/f/mrevgppz;
+    const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mrevgppz';
 
     document.getElementById('contactForm').addEventListener('submit', async e => {
       e.preventDefault();
@@ -1206,7 +1206,7 @@
       status.textContent = '';
 
       try {
-        const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+        const res = await fetch(FORMSPREE_ENDPOINT, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
           body: JSON.stringify({
